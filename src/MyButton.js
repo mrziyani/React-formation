@@ -1,5 +1,5 @@
 import './MyButton.css'
-import { useState } from 'react';
+
 
 const btn = {
     name : 'reda',
@@ -31,18 +31,12 @@ const listUsers = users.map(user => (
 
 
 
-function MyButton() {
-    function handleClick(){
-        setCount(count+1)
-        alert(`clicked ${count+1} times`);
-    }
-
-    const [count, setCount] = useState(0);
-
+function MyButton({ onClick }) {
+    
     return (
         <div>
         {content}
-        <button className="my-btn" onClick={handleClick}> {btn.name} ziyani button </button>
+        <button className="my-btn" onClick={onClick}> {btn.name} ziyani button </button>
         <ul>{listUsers}</ul>
         </div>
     )
